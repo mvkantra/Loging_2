@@ -29,8 +29,9 @@
     <b style="color: #ffffff;">Unity:</b>
     <%= @user.unity_id%>
     </p>
-
+ <% if @user.username!= "admin" %>
 <p style="margin-left: 160px"> <%= link_to 'Edit', edit_user_path(@user) %> </p>
+      <% end %>
 </div>
 <% else %>
     <div id="notice_message" >
