@@ -23,7 +23,7 @@
     <td align="center" width="40%"><%= user.username %></td>
     <td align="center" width="40%"><%= user.unity_id %></td>
     <td title="Show User Details" align="center"><%= link_to image_tag('Show.png',:alt=>'ashow'), user %></td>
-    <% if user.username=="admin" %>
+    <% if user.username!="admin" %>
     <td title="Edit User Details" align="center"><%= link_to image_tag('edit.png',:alt=>'aedit'), edit_user_path(user) %></td>
 
     <td title="Remove User" align="center"><%= link_to image_tag('remove_user.png',:alt=>'aremove'), user, confirm: 'Are you sure?', method: :delete %></td>
