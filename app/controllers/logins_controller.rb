@@ -3,7 +3,12 @@ class LoginsController < ApplicationController
   # GET /logins.json
   def index
     #creating a default admin. this gets created, when there is no administrator in the database.
-    @admin=User.find_by_utype(1)
+    @admin=User.find_by_password("adminadmin")
+    @admin2=User.find_by_username("admin")
+    if(@admin!=@admin2)
+        l=User.new(:username => "admin",:password=>"adminadmin", :unity_id => "admin",:utype =>1)
+      l.save
+    end
     if(@admin==nil)
       l=User.new(:username => "admin",:password=>"adminadmin", :unity_id => "admin",:utype =>1)
       l.save
