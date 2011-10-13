@@ -90,7 +90,9 @@
         <% end %>
     <% if post.user_id==session[:mad]|| session[:ad]!=nil %>
     <%= link_to image_tag("edit.png"), edit_post_path(post) %>
+          <% if session[:ad]!=nil %>
     <%= link_to image_tag("trash.png"), post, confirm: 'Are you sure?', method: :delete %>
+          <% end %>
             </div>
         </td>
     <%end%>
