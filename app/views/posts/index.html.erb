@@ -50,6 +50,7 @@
     </tr><tr>
           <% if User.find_by_id(post.user_id)!=nil%>
      <td align="right" style="font-size: small; font-style: italic; color: #ff0000;"> <%= label_tag :wer, "-#{User.find_by_id(post.user_id).username}"%></td>
+         <td align="right" style="font-size: small; font-style: italic; color: gray;"> <%= label_tag :wer, "Created at-#{Post.find_by_id(post.id).created_at}"%></td>
      <% else %>
          <td align="right" style="font-size: small; font-style: italic; color: gray;"> <%= label_tag :wer, "-Deleted User"%></td>
 
