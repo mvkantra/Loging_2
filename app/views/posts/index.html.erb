@@ -6,6 +6,17 @@
 <p style="font-size: large;"><%= link_to 'New Post', new_post_path %></p>
 <% end %>
 </h1>
+  <% if session[:ad]!=nil %>
+    <%= form_tag(:controller => 'users',:action => 'new') do %>
+        <button type="submit" value="New Administrator" class="button12">New User</button>
+
+    <% end %>
+    </br>
+    <%= form_tag(:controller => 'users',:action => 'index') do %>
+        <button type="submit" value="View all users" class="button12">View all users</button>
+
+    <% end %>
+<% end %>
 <h1 style="color: #ffffff;  background-color: #141414;
      background: rgba(0, 0, 0, 0.6); margin-left: auto; margin-right: auto; width: 200px; border: 10px; border-radius: 10px;" align="center">All Posts</h1>
 </div>
@@ -64,14 +75,4 @@
 
 <br />
 <br />
-<% if session[:ad]!=nil %>
-    <%= form_tag(:controller => 'users',:action => 'new') do %>
-        <button type="submit" value="New Administrator" class="button12">New User</button>
 
-    <% end %>
-    </br>
-    <%= form_tag(:controller => 'users',:action => 'index') do %>
-        <button type="submit" value="View all users" class="button12">View all users</button>
-
-    <% end %>
-<% end %>
