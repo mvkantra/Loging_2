@@ -53,6 +53,7 @@
          <td align="right" style="font-size: small; font-style: italic; color: gray; overflow: hidden; white-space: nowrap;"><div> <%= label_tag :wer, "Created at-#{Post.find_by_id(post.id).created_at}"%></div></td>
      <% else %>
          <td align="right" style="font-size: small; font-style: italic; color: gray;"> <%= label_tag :wer, "-Deleted User"%></td>
+          <td align="right" style="font-size: small; font-style: italic; color: gray; overflow: hidden; white-space: nowrap;"><div> <%= label_tag :wer, "Created at-#{Post.find_by_id(post.id).created_at}"%></div></td>
 
      <% end %>
   </tr>
