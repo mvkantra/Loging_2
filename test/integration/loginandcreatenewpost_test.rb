@@ -53,6 +53,13 @@ class LoginandcreatenewpostTest < ActionDispatch::IntegrationTest
            click_on("View all users")
           find(:xpath, "//a/img[@alt='ashow']/..").click
            click_on('BackChannel Application')
+           click_button("New User")
+           find_field('uname').set('newadmin')
+           find_field('upwd').set('newadmin12')
+           find_field('uid').set('newadmin')
+           find_field('uty').set('1')
+           click_button("Create User")
+           click_on("BackChannel Application")
           click_on("View all users")
           find(:xpath, "//a/img[@alt='aedit']/..").click
           find_field('uname').set('achyuth')
